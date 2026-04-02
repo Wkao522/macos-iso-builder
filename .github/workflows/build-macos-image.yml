@@ -24,6 +24,7 @@ on:
           - 'Mavericks'
           - 'Mountain Lion'
           - 'Lion'
+        default: "Sonoma"
       image_format:
         description: "Choose 'iso' for virtual machines, 'dmg' for flash to USB drive."
         required: true
@@ -36,7 +37,7 @@ on:
 jobs:
   build-macos-image:
     if: ${{ inputs.macos_version != '' && inputs.image_format != '' }}
-    runs-on: macos-15-intel
+    runs-on: macos-14
     timeout-minutes: 80
 
     steps:
